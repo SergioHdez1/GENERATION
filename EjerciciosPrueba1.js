@@ -17,7 +17,7 @@ function numeroMasGrande(array) { //funcion que toma como argumento un array
     return numeroMayor;
 }
 numeroMasGrande(listaNumeros);
-
+console.log('---------------------------');
 /*
     Exercise #2
 Write a program to sort a list of numbers in descending order (from highest to lowest).
@@ -27,7 +27,7 @@ function ordenarLista(array) {
     console.log(array);
 }
 ordenarLista(listaNumeros);
-
+console.log('---------------------------');
 /*
     Exercise #3
 Step 1
@@ -45,7 +45,7 @@ function compararMasGrandes(listaNumeros, listaNumeros2) {
     }
 }
 compararMasGrandes(listaNumeros, listaNumeros2);
-
+console.log('---------------------------');
 /*Find a partner.
 Exchange your code.
 Read your partner's code and suggest improvements on how you would refactor their code.
@@ -70,6 +70,7 @@ function printOutString(array) {
     console.log(sentence);
 }
 printOutString(arr);
+console.log('---------------------------');
 /*Complete the function to print out the string This is a sentence.
  */
 
@@ -86,7 +87,7 @@ function multiplicarPor2(array) {
     array.forEach(x => console.log(x * 2));
 }
 multiplicarPor2([1, 2, 4, 5]);
-
+console.log('---------------------------');
 /*Exercise #3
 Write a program to compute the sum and product (multiplication) of an array of numbers. Print out the sum and the product.
 Example: Given an array [1, 2, 3, 4] The sum is 10. The product is 24.
@@ -103,7 +104,7 @@ function sumaYMultiplica(array) {
     console.log('El producto es: ' + producto);
 }
 sumaYMultiplica([1, 2, 3, 4]);
-
+console.log('---------------------------');
 /*Exercise #4
 var student1Courses = ['Math', 'English', 'Programming'];
 var student2Courses = ['Geography', 'Spanish', 'Programming'];
@@ -112,8 +113,19 @@ Create a program that loops over the 2 arrays; if there are any common courses p
 var student1Courses = ['Math', 'English', 'Programming'];
 var student2Courses = ['Geography', 'Spanish', 'Programming'];
 
-
+function elementosComunes(array1, array2) {
+    let comunes = [];
+    for (let i = 0; i < array1.length; i++) {
+        for (let j = 0; j < array2.length; j++) {
+            if (array1[i] == array2[j]) {
+                comunes.push(array1[i]);
+            }
+        }
+    }
+    console.log('Los elementos comunes son: ' + comunes);
+}
 elementosComunes(student1Courses, student2Courses);
+console.log('---------------------------');
 
 /*Exercise #5
 For each of the exercises below, assume you are starting with the following people array.
@@ -130,52 +142,89 @@ Write the command that gives the indexOf where "Maria" is located.
 At the end of the exercise, there should be 4 people in the array.
 */
 
+var people = ["Maria", "Dani", "Luis", "Juan", "Camila"];
+
+function listaPersonas(lista) {
+    for (let i = 0; i < people.length; i++) {
+        console.log(people[i]);
+    }
+    lista.splice(lista.indexOf('Dani'), 1, );
+    lista.splice(lista.indexOf('Juan'), 1, );
+    lista.splice(lista.indexOf('Luis'), 1, );
+    lista.splice(0, 0, 'Luis');
+    lista.splice(lista.length, 0, 'Sergio');
+    console.log(lista);
+    while (true) {
+        console.log('Maria')
+        break
+    }
+    console.log(lista.indexOf('Maria'));
+}
+
+listaPersonas(people);
+console.log('---------------------------');
 /*Sorting
 Exercise #1
 Write a program to sort a list of names alphabetically.
+*/
 
+function ordenarAlfabeticamente(lista) {
+    lista.sort();
+    console.log(lista);
+}
+ordenarAlfabeticamente(people);
+console.log('---------------------------');
+
+/*
 Code Refactoring & Fixing Code
 Exercise #1
 Code and paste the code below into a repl.it (set to Javascript).
 Make sure to run the program to understand the output.
 Find ways to improve the code and make it clearer to understand.
-function someFunction(list) {
-  if (list.length === 0) {
-    return 0;
-  }
-  
-  return list.length;
-}
 */
+/*
+function someFunction(list) {
+    if (list.length === 0) {
+        return 0;
+    }
+    return list.length;
+}*/
+//NO SUPE HACERLA :(
 
+console.log('---------------------------');
 /*
 Exercise #2
 Copy and paste the code below into a repl.it (set to Javascript).
 Make sure to run the program to understand what it currently outputs.
 Write test cases and fix the code according to the expected output.
 Output should be: Failed if they scored 6 or less Insufficient if they scored > 6 but less than 9. (9 included) Good if they scored > 9 but less than 14. (14 included) Excellent if they scored 15. Error if participants enter a negative number or a number outside the range supported (outside 0 - 15)
+*/
 
+/* ESTE TAMPOCO ME SALE :(
 function gradeLabel(grade) {
-    if (grade < 6 && grade > 0) {
-        console.log(“Failed”);
-    }
-
-    if (grade > 6 && grade <= 9) {
-        console.log(“Insufficient”);
-    }
-
-    if (grade > 9 || grade <= 14) {
-        console.log(“Good”);
-    }
-
-    if (grade == 15) {
-        console.log(“Good”);
-    }
-    
-    if (grade < 0 || grade > 15) {
+    if (grade >= 0 && grade < 6) {
+        console.log('Failed');
+    } else if (grade > 6 && grade <= 9) {
+        console.log('Insufficient');
+    } else if (grade > 9 || grade <= 14) {
+        console.log('Good');
+    } else if (grade == 15) {
+        console.log('Good');
+    } else if (grade < 0 || grade > 15) {
         console.log("Error, outside of bounds");
     }
 }
+gradeLabel(-2);
+gradeLabel(0);
+gradeLabel(2);
+gradeLabel(6);
+gradeLabel(8);
+gradeLabel(9);
+gradeLabel(12);
+gradeLabel(14);
+gradeLabel(15);
+gradeLabel(16);
+console.log('---------------------------');
 */
 
 
@@ -185,4 +234,23 @@ var values1= ['Apple', 1, false];
 var values2 = ['Fries', 2 ,true];
 var values3 = ['Mars', 9, 'Apple'];
 Create a function that compares the 3 arrays and finds any common elements. Print out the common elements.
+*/
+/*
+var values1= ['Apple', 1, false];
+var values2 = ['Fries', 2 ,true];
+var values3 = ['Mars', 9, 'Apple'];
+function elementosComunes(array1, array2, array3) {
+    let comunes = [];
+    for (let i = 0; i < array1.length; i++) {
+        for (let j = 0; j < array2.length; j++) {
+            for (let k = 0; k < array3.length; k++) {
+                if (array1[i] == array2[j] == array3[k]) {
+                    comunes.push(array1[i]);
+                }
+            }
+        }
+    }
+    console.log('Los elementos comunes son: ' + comunes);
+}
+elementosComunes(values1, values2, values3);
 */
