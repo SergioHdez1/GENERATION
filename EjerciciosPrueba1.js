@@ -109,8 +109,11 @@ var student1Courses = ['Math', 'English', 'Programming'];
 var student2Courses = ['Geography', 'Spanish', 'Programming'];
 Create a program that loops over the 2 arrays; if there are any common courses print them out to the console.
 */
+var student1Courses = ['Math', 'English', 'Programming'];
+var student2Courses = ['Geography', 'Spanish', 'Programming'];
 
 
+elementosComunes(student1Courses, student2Courses);
 
 /*Exercise #5
 For each of the exercises below, assume you are starting with the following people array.
