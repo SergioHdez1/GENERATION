@@ -13,6 +13,8 @@ public class GuiaFunciones3 {
     public static void main(String[] args) {
         Console console = System.console();
 
+        System.out.println(":::::...MENU...:::::");
+
         int interruptor = 0;
         while (interruptor == 0) {
             Float grado = Float.parseFloat(console.readLine("Ingrese la temperatura en grados Celsius: \n"));
