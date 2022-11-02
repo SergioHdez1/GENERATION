@@ -14,16 +14,13 @@ public class GuiaFunciones3 {
         Console console = System.console();
 
         System.out.println(":::::...MENU...:::::");
-
-        int interruptor = 0;
-        while (interruptor == 0) {
-            Float grado = Float.parseFloat(console.readLine("Ingrese la temperatura en grados Celsius: \n"));
-            System.out.println("La temperatura en grados farenheit es de: "+CelsiusAFarenheit(grado));
+        while (true) {
+            float grado = Float.parseFloat(console.readLine("Ingrese la temperatura en grados Celsius: \n"));
             if (grado == -999){
                 System.out.println("Finalizado");
                 break;
             }
+            System.out.println("La temperatura en grados farenheit es de: "+CelsiusAFarenheit(grado));
         } 
     }
-    
 }
