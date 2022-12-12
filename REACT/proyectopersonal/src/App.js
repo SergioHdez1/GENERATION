@@ -1,15 +1,15 @@
 import React from "react";
-import camaro from "./img/camaro.png"
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { HomePage } from "./pages";
 
-const App = ()=>{
-    return(
-        <div>
-            <h1>Modelos deportivos</h1>
-            <h2>Camaro</h2>
-            <div align="center">
-                <img src={camaro} alt="camaro" align="center"/>
-            </div>
-        </div>
+const App = () => {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<HomePage/>}/>"
+            </Routes>
+        </BrowserRouter>
     );
 }
+
 export default App;
