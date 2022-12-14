@@ -1,7 +1,7 @@
 import React from "react";
-import {SendButton, CrudButton}  from "./Buttons";
+import SendButton from "./Buttons";
 
-const CarTable = () => {
+const CarTable = ({autos, deleteAuto}) => {
     return (
         <table class="table table-bordered table-striped">
             <thead>
@@ -15,13 +15,23 @@ const CarTable = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <th scope="row"></th>
+                {autos.map(auto =>(
+                    <tr>
+                        <th scope="row">{auto.id}</th>
+                        <td>{auto.marca}</td>
+                        <td>{auto.modelo}</td>
+                        <td>{auto.valor}</td>
+                        <td>{auto.anio}</td>
+                        <td class="d-flex justify-content-center"><button type="button" class="btn btn-primary" onClick={() => { deleteAuto(auto.id);}}>Eliminar</button></td>
+                    </tr>
+                ))}
+{/*                <tr>
+{/*                 <th scope="row"></th>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="d-flex justify-content-center"><CrudButton/></td>
+                <td class="d-flex justify-content-center"><SendButton/></td>
                 </tr>
                 <tr>
                 <th scope="row"></th>
@@ -29,22 +39,14 @@ const CarTable = () => {
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="d-flex justify-content-center"><CrudButton/></td>
-                </tr>
-                <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="d-flex justify-content-center"><CrudButton/></td>
-                </tr>
+                <td class="d-flex justify-content-center"><SendButton/></td>
+                </tr> */} 
             </tbody>
         </table>
     );
 }
 
-const UserTable = () => {
+const UserTable = ({usuarios, deleteUser}) => {
     return (
         <table class="table table-bordered table-striped">
             <thead>
@@ -57,27 +59,29 @@ const UserTable = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="d-flex justify-content-center"><CrudButton/></td>
+                {usuarios.map(usuario =>(
+                    <tr>
+                        <th scope="row"> {usuario.rut}</th>
+                        <td>{usuario.nombre}</td>
+                        <td>{usuario.apellido}</td>
+                        <td>{usuario.correo}</td>
+                        <td class="d-flex justify-content-center"><button type="button" class="btn btn-primary" onClick={() => { deleteUser(usuario.rut);}}>Eliminar</button></td>
+                        </tr>
+                ))}
+{/*                 <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="d-flex justify-content-center"><CrudButton/></td>
                 </tr>
                 <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="d-flex justify-content-center"><CrudButton/></td>
-                </tr>
-                <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="d-flex justify-content-center"><CrudButton/></td>
-                </tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="d-flex justify-content-center"><CrudButton/></td>
+                </tr> */}
             </tbody>
         </table>
     );
