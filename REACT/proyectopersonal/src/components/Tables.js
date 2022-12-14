@@ -1,5 +1,4 @@
 import React from "react";
-import SendButton from "./Buttons";
 
 const CarTable = ({autos, deleteAuto}) => {
     return (
@@ -22,31 +21,16 @@ const CarTable = ({autos, deleteAuto}) => {
                         <td>{auto.modelo}</td>
                         <td>{auto.valor}</td>
                         <td>{auto.anio}</td>
-                        <td class="d-flex justify-content-center"><button type="button" class="btn btn-primary" onClick={() => { deleteAuto(auto.id);}}>Eliminar</button></td>
+                        <td class="d-flex justify-content-center"><button type="button" class="btn btn-danger" onClick={() => { deleteAuto(auto.id);}}>Eliminar</button></td>
+                        <td class="d-flex justify-content-center"><button type="button" class="btn btn-warning" onClick={() => { deleteAuto(auto.id);}}>Editar</button></td>
                     </tr>
                 ))}
-{/*                <tr>
-{/*                 <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="d-flex justify-content-center"><SendButton/></td>
-                </tr>
-                <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="d-flex justify-content-center"><SendButton/></td>
-                </tr> */} 
             </tbody>
         </table>
     );
 }
 
-const UserTable = ({usuarios, deleteUser}) => {
+const UserTable = ({usuarios, deleteUser, setUsuarioEditado}) => {
     return (
         <table class="table table-bordered table-striped">
             <thead>
@@ -65,23 +49,10 @@ const UserTable = ({usuarios, deleteUser}) => {
                         <td>{usuario.nombre}</td>
                         <td>{usuario.apellido}</td>
                         <td>{usuario.correo}</td>
-                        <td class="d-flex justify-content-center"><button type="button" class="btn btn-primary" onClick={() => { deleteUser(usuario.rut);}}>Eliminar</button></td>
-                        </tr>
+                        <td class="d-flex justify-content-center"><button type="button" class="btn btn-danger" onClick={() => { deleteUser(usuario.rut)}}>Eliminar</button></td>
+                        <td class="d-flex justify-content-center"><button type="button" class="btn btn-warning" onClick={() => { setUsuarioEditado(usuario)}}>Editar</button></td>
+                    </tr>
                 ))}
-{/*                 <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="d-flex justify-content-center"><CrudButton/></td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="d-flex justify-content-center"><CrudButton/></td>
-                </tr> */}
             </tbody>
         </table>
     );
