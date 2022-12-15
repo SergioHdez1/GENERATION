@@ -14,6 +14,7 @@ const CarTable = ({autos, deleteAuto}) => {
                 </tr>
             </thead>
             <tbody>
+                {/* crea una lista con los valores de cada objeto auto y los pone en la tabla */}
                 {autos.map(auto =>(
                     <tr>
                         <th scope="row">{auto.id}</th>
@@ -43,6 +44,9 @@ const UserTable = ({usuarios, deleteUser, setUsuarioEditado}) => {
                 </tr>
             </thead>
             <tbody>
+                 {/* //Iteramos usuarios con .map, a cada 
+                        elemento de usuarios lo llamaremos usuario y 
+                            realizaremos lo siguiente => */}
                 {usuarios.map(usuario =>(
                     <tr>
                         <th scope="row"> {usuario.rut}</th>

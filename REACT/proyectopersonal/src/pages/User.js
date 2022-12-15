@@ -36,19 +36,25 @@ const UserPage = () => {
     const [usuarioEditado, setUsuarioEditado] = useState(null);
 
     const userDelete = (rutUsuario) => {
+        //esta funcion filtra mi lista de usuarios
         const changeUser = user.filter(usuario => usuario.rut != rutUsuario);
+        //al momento de ocupar la funcion setState, yo le voy a cambiar el valor TEMPORAL a mis usuarios
         setUser(changeUser);
     }
     
     const userAdd = (usuario) => {
         const addUsuario = [
-            ...user, usuario
+            //mantenme los datos que tengo en user y agregame lo que yo te entrego aqui (usuario)
+            ...user, usuario //...(NOMBRE DEL STATE)
         ]
+        //luego actualizamos (o seteamos) el state
         setUser(addUsuario);
     }
 
     const userEdit = (usuarioEditado) => {
+        //crea un objeto usuario llamado editUser, si los rut son iguales, mapea usuario Editado, si no, mapea usuario
         const editUser = user.map(usuario => (usuario.rut === usuarioEditado.rut ? usuarioEditado : usuario))
+        //setea el editUser(objeto usuario mapeado creado anteriormente)
         setUser(editUser);
     }
 
