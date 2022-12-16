@@ -31,15 +31,15 @@ const CarFormComponent = () => {
 }
 
 const initialUsuario = {
-    nombre: "",
-    apellido: "",
+    name: "",
+    lastName: "",
     correo: "",
-    rut: ""
+    id: ""
 }
 
 const UserFormComponent = ({ userAdd, usuarioEditado, setUsuarioEditado, userEdit }) => {
     const [usuario, setUsuario] = useState(initialUsuario);
-    const { nombre, apellido, correo, rut } = usuario;
+    const { name, lastName, correo, id } = usuario;
     //el hook useEffect siempre esta pendiente de si la variable que tiene dentro de
     //sus corchetes cambia el deberá hacer todo lo que tiene en su funcion dentro
     //CONSIDERACIÓN es que useEffect siempre corre al menos 1 vez cuando la página carga por primera vez
@@ -48,10 +48,10 @@ const UserFormComponent = ({ userAdd, usuarioEditado, setUsuarioEditado, userEdi
             setUsuario(usuarioEditado)
         } else {
             setUsuario({
-                nombre: "",
-                apellido: "",
+                name: "",
+                lastName: "",
                 correo: "",
-                rut: ""
+                id: "",
             }
             )
         }
@@ -77,18 +77,18 @@ const UserFormComponent = ({ userAdd, usuarioEditado, setUsuarioEditado, userEdi
                 segun si queremos editar o ingresar */}
                 {usuarioEditado !== null ? <h1>Editar Usuario</h1> : <h1>Ingrese Usuario</h1>}
                 <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Rut</label>
+                    <label for="formGroupExampleInput" class="form-label">Id</label>
                     //para que mi formulario sea capaz de crear un usuario debemos agregarle a los input
                     //lo siguente
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su nombre" name="rut" value={rut} onChange={handleInputChange} />
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su ID" name="id" value={id} onChange={handleInputChange} />
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su nombre" name="nombre" value={nombre} onChange={handleInputChange} />
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su nombre" name="name" value={name} onChange={handleInputChange} />
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su apellido" name="apellido" value={apellido} onChange={handleInputChange} />
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su apellido" name="lastName" value={lastName} onChange={handleInputChange} />
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Correo</label>

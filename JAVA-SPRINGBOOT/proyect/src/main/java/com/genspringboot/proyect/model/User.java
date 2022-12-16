@@ -41,13 +41,11 @@ public class User {
     public User() {
     }
 
-    public User(int id, String name, String lastName, String correo, License license, List<BuySell> buySell) {
+    public User(int id, String name, String lastName, String correo) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.correo = correo;
-        this.license = license;
-        this.buySell = buySell;
     }
 
     public int getId() {

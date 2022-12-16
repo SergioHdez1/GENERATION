@@ -34,7 +34,7 @@ public class LicenseController {
     public void actualizarLicencia(@RequestBody License license){
         licenseService.updateLicense(license);
     }
-    @GetMapping("/findAll")
+    @GetMapping("/License/findAll")
     public Iterable<License> todasLasLicencias(){
         return licenseService.findAll();
     }

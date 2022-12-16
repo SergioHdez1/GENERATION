@@ -36,7 +36,7 @@ const UserTable = ({usuarios, deleteUser, setUsuarioEditado}) => {
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                <th scope="col">#ID</th>
+                <th scope="col">Rut</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Correo</th>
@@ -49,11 +49,11 @@ const UserTable = ({usuarios, deleteUser, setUsuarioEditado}) => {
                             realizaremos lo siguiente => */}
                 {usuarios.map(usuario =>(
                     <tr>
-                        <th scope="row"> {usuario.rut}</th>
-                        <td>{usuario.nombre}</td>
-                        <td>{usuario.apellido}</td>
+                        <th scope="row"> {usuario.id}</th>
+                        <td>{usuario.name}</td>
+                        <td>{usuario.lastName}</td>
                         <td>{usuario.correo}</td>
-                        <td class="d-flex justify-content-center"><button type="button" class="btn btn-danger" onClick={() => { deleteUser(usuario.rut)}}>Eliminar</button></td>
+                        <td class="d-flex justify-content-center"><button type="button" class="btn btn-danger" onClick={() => { deleteUser(usuario.id)}}>Eliminar</button></td>
                         <td class="d-flex justify-content-center"><button type="button" class="btn btn-warning" onClick={() => { setUsuarioEditado(usuario)}}>Editar</button></td>
                     </tr>
                 ))}
